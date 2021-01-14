@@ -18,10 +18,6 @@ while (memoryNumbers.length < 5 ){
 alert(memoryNumbers);
 
 
-var secondi = 5;
-var tempoDietro = setInterval(ciao,1000);
-var utente = parseInt(prompt('inserisi i numeri visti'));
-
 //********FUNZIONI********
 
 
@@ -33,12 +29,5 @@ function generaRandom(min, max){
 
 
 function ciao(){
-    if(secondi ==0 ){
-        clearInterval(tempoDietro);
-        document.getElementById('stampa').innerHTML = utente;
-    } else{
-        document.getElementById('stampa').innerHTML = 'tra '+ secondi + ' s';
 
-    }
-    secondi--;
 }
