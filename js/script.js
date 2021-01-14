@@ -40,17 +40,19 @@ function game(){
 
     for(var i = 0; i < 5; i++){
         var user = parseInt(prompt('inserisi i numeri visti'));
-        if( userNumber.includes(user) == false){
+        
+        if(user < 0 || user > 100){
+            alert('attenzione inserisci un numero tra 1 e 100')
+        } else if( userNumber.includes(user) == false){
             userNumber.push(user);
             if(numeriRandom.includes(user)){
                 correctNumbers.push(user);
-            } else if(user < 0 || user > 100){
-                alert('attenzione inserisci un numero tra 1 e 100')
-
             } else{
-            wrongNumbers.push(user)
+                wrongNumbers.push(user)
             }     
         }
+        
+
     }
 
     document.getElementById('array').innerHTML = 'I numeri erano: ' + numeriRandom;
