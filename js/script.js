@@ -24,7 +24,7 @@ function generaRandom(min, max){
 function popolaArray(){
     var memoryNumbers = [];
     while (memoryNumbers.length < 5 ){
-        var number = generaRandom(1,30000);
+        var number = generaRandom(1,100);
         if(memoryNumbers.includes(number) == false){
             memoryNumbers.push(number);
         }   
@@ -44,6 +44,9 @@ function game(){
             userNumber.push(user);
             if(numeriRandom.includes(user)){
                 correctNumbers.push(user);
+            } else if(user < 0 || user > 100){
+                alert('attenzione inserisci un numero tra 1 e 100')
+
             } else{
             wrongNumbers.push(user)
             }     
