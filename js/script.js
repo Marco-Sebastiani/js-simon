@@ -12,7 +12,7 @@ console.log(numeriRandom);
 alert('REGOLE DEl GIOCO \n' + 'MEMORIZZATI QUESTI NUMERI \n' + '\n' + numeriRandom);
 
 
-setTimeout(game, 1000);
+setTimeout(game, 5000);
 
 //********FUNZIONI********
 
@@ -38,7 +38,7 @@ function game(){
     var correctNumbers = [];
     var wrongNumbers = [];
 
-    for(var i = 0; i < 5; i++){
+    while(userNumber.length < 5){
         var user = parseInt(prompt('inserisi i numeri visti'));
         
         if(user < 0 || user > 100){
@@ -51,8 +51,6 @@ function game(){
                 wrongNumbers.push(user)
             }     
         }
-        
-
     }
 
     document.getElementById('array').innerHTML = 'I numeri erano: ' + numeriRandom;
