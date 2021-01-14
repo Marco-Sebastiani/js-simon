@@ -13,30 +13,8 @@ alert('REGOLE DEl GIOCO \n' + 'MEMORIZZATI QUESTI NUMERI \n' + '\n' + numeriRand
 
 console.log(numeriRandom);
 
-//QUI CON UN CICLO CONTROLLO SE I NUMERI DELL'UTENTE SONO GIA' PRESENTI E SE SONO GIUSTI
-var userNumber = [];
-var correctNumbers = [];
-var wrongNumbers = [];
 
-for(var i = 0; i < 5; i++){
-    var user = parseInt(prompt('inserisi i numeri visti'));
-    if( userNumber.includes(user) == false){
-        userNumber.push(user);
-        if(numeriRandom.includes(user)){
-            correctNumbers.push(user);
-        } else{
-        wrongNumbers.push(user)
-        }     
-    }
-
-}
-
-console.log(userNumber + ' numeri inseriti');
-console.log(correctNumbers + ' numeri indovinati');
-console.log(wrongNumbers + ' numeri sbabliati');
-// var secondi = 5;
-// var tempoDietro = setTimeout(ciao,5000);
-
+setTimeout(game, 10000);
 
 //********FUNZIONI********
 
@@ -56,7 +34,29 @@ function popolaArray(){
     return  memoryNumbers;
 }
 
+function game(){
+        //QUI CON UN CICLO CONTROLLO SE I NUMERI DELL'UTENTE SONO GIA' PRESENTI E SE SONO GIUSTI
+    var userNumber = [];
+    var correctNumbers = [];
+    var wrongNumbers = [];
 
+    for(var i = 0; i < 5; i++){
+        var user = parseInt(prompt('inserisi i numeri visti'));
+        if( userNumber.includes(user) == false){
+            userNumber.push(user);
+            if(numeriRandom.includes(user)){
+                correctNumbers.push(user);
+            } else{
+            wrongNumbers.push(user)
+            }     
+        }
+
+    }
+
+    document.write(userNumber + ' numeri inseriti' + '<br>');
+    document.write(correctNumbers + ' numeri indovinati' + '<br>');
+    document.write(wrongNumbers + ' numeri sbabliati');
+}
 
 
 
