@@ -7,14 +7,12 @@
 
 //QUI POPOLO L'ARRAY CON LA FUNZIONE GENERA RANDOM
 var numeriRandom = popolaArray();
-
+console.log(numeriRandom);
 //QUI FACCIO COMPARIRE I NUMERI ALL'UTENTE CON UN ALERT
 alert('REGOLE DEl GIOCO \n' + 'MEMORIZZATI QUESTI NUMERI \n' + '\n' + numeriRandom);
 
-console.log(numeriRandom);
 
-
-setTimeout(game, 10000);
+setTimeout(game, 1000);
 
 //********FUNZIONI********
 
@@ -26,7 +24,7 @@ function generaRandom(min, max){
 function popolaArray(){
     var memoryNumbers = [];
     while (memoryNumbers.length < 5 ){
-        var number = generaRandom(1,100);
+        var number = generaRandom(1,30000);
         if(memoryNumbers.includes(number) == false){
             memoryNumbers.push(number);
         }   
@@ -50,13 +48,12 @@ function game(){
             wrongNumbers.push(user)
             }     
         }
-
     }
 
-    document.write(userNumber + ' numeri inseriti' + '<br>');
-    document.write(correctNumbers + ' numeri indovinati' + '<br>');
-    document.write(wrongNumbers + ' numeri sbabliati');
+    document.getElementById('array').innerHTML = 'I numeri erano: ' + numeriRandom;
+    document.getElementById('stampa-inseriti').innerHTML = 'numeri inseriti: ' + userNumber;
+    document.getElementById('stampa-indovinati').innerHTML ='numeri indovinati: ' + correctNumbers;
+    document.getElementById('stampa-sbagliati').innerHTML ='numeri sbabliati inseriti: ' + wrongNumbers;
 }
-
 
 
